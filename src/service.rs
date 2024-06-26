@@ -216,6 +216,7 @@ where
 
                 let session = Session::new(session_id, session_store, session_config.expiry);
 
+                println!("Inserting session");
                 req.extensions_mut().insert(session.clone());
 
                 let res = inner.call(req).await?;
